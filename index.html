@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>CryptoZombies front-end</title>
+        <!-- Bootstrap 4 CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Include web3.js here -->
+        <script language="javascript" type="text/javascript" src="web3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="contractABI.js"></script>
+  </head>
+  <body>
+
+    <div class="col-md-6 offset-md-3">
+        <h1 style="text-align: center;">Marks Monitoring System</h1>
+    </div>
+    <br>
+    <div class="col-md-6 offset-md-3">
+        <a href="student.html" style="text-align: center;"><p>Click here if you are student ?</p></a>
+        <a href="proctor.html" style="text-align: center;"><p>Click here if you are proctor ?</p></a>    
+    </div>
+    
+
+    <!-- Using Infura -->
+    <script>
+      var Class;
+
+          function startApp() {
+            var schoolAddress = "0x8eccc7b751778d9d9dd675cac8d7cf3f79d8bef1";
+            Class = new web3js.eth.Contract(schoolABI, schoolAddress);
+          }
+
+    /*       function admin_showStudent(id) {
+              return Class.methods.admin_showStudent(id).send({ from: web3.eth.defaultAccount })
+            }
+             
+            function show_details() {
+              return Class.methods.show_details().send({ from: web3.eth.defaultAccount })
+            }
+
+            function add_details(name,marks) {
+              return Class.methods.add_details(name,marks).send({ from: web3.eth.defaultAccount })
+            }
+
+            function uuid() {
+              return Class.methods.uuid().call()
+            }
+
+
+            function uuid2() {
+              uuid()
+              .then(function(result) {
+                console.log("Zombie 15: " + JSON.stringify(result));
+              });
+
+
+            }
+
+*/
+        window.addEventListener('load', function() {
+
+            // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+            if (typeof web3 !== 'undefined') {
+            // Use Mist/MetaMask's provider
+            web3js = new Web3(web3.currentProvider);
+
+            } else {
+            // Handle the case where the user doesn't have web3. Probably 
+            // show them a message telling them to install Metamask in 
+            // order to use our app.
+            alert("Install metamask ");
+            }
+
+            // Now you can start your app & access web3js freely:
+            startApp()
+
+            })
+ //       var web3 = new Web3(new Web3.providers.WebsocketProvider("wss://mainnet.infura.io/ws"));
+    </script>
+
+    
+<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+</html>
