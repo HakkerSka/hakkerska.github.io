@@ -12,13 +12,13 @@ For simplicity we have taken only student name and marks as details which we are
 Requirements - 
 - Remix browser
 - Metamask 
-- Test network
+- Test network (can use ganache or any network like rinkeby/ropston etc) 
 - Editor
-- Xampp 
+- Xampp
 - Web3.js 
 
-Here i have use remix to deploy my smartcontract to test network and later on rinkeby network but you can even use truffle to do so.
-if you are bigner i will suggest you to go with remix. :)
+Here i have use remix to deploy my smartcontract to test network and later on rinkeby network but you can even use truffle to do so (then you did not need xampp and remix).
+if you are beginer i will suggest you to go with remix. :)
 
 
 Let's see what's here inside the smart contract.
